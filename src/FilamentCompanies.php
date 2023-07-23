@@ -174,7 +174,7 @@ class FilamentCompanies
     /**
      * Find a user instance by the given ID.
      */
-    public static function findUserByIdOrFail(int $id): mixed
+    public static function findUserByIdOrFail(int | string  $id): mixed
     {
         return static::newUserModel()->where('id', $id)->firstOrFail();
     }

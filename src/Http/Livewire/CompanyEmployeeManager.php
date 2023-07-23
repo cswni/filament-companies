@@ -129,7 +129,7 @@ class CompanyEmployeeManager extends Component
     /**
      * Allow the given user's role to be managed.
      */
-    public function manageRole(int $userId): void
+    public function manageRole(int | string $userId): void
     {
         $this->currentlyManagingRole = true;
         $this->managingRoleFor = FilamentCompanies::findUserByIdOrFail($userId);
