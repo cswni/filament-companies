@@ -57,7 +57,7 @@ class CompanyEmployeeManager extends Component
     /**
      * The ID of the company employee being removed.
      */
-    public int|null $companyEmployeeIdBeingRemoved = null;
+    public int|null|string $companyEmployeeIdBeingRemoved = null;
 
     /**
      * The "add company employee" form state.
