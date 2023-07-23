@@ -184,7 +184,7 @@ class CompanyEmployeeManager extends Component
     /**
      * Confirm that the given company employee should be removed.
      */
-    public function confirmCompanyEmployeeRemoval(int $userId): void
+    public function confirmCompanyEmployeeRemoval(int | string $userId): void
     {
         $this->confirmingCompanyEmployeeRemoval = true;
 
