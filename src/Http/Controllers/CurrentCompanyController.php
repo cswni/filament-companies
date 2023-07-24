@@ -22,6 +22,7 @@ class CurrentCompanyController extends Controller
             abort(403);
         }
 
-        return redirect()->to((CompanySettings::getUrl(compact('company'))), 303);
+        //return redirect()->to((CompanySettings::getUrl(compact('company'))), 303);
+        return redirect()->back();
     }
 }
