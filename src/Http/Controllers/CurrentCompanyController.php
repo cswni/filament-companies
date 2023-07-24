@@ -9,6 +9,7 @@ use Livewire\Redirector;
 use Wallo\FilamentCompanies\FilamentCompanies;
 use Wallo\FilamentCompanies\Pages\Companies\CompanySettings;
 
+
 class CurrentCompanyController extends Controller
 {
     /**
@@ -23,7 +24,7 @@ class CurrentCompanyController extends Controller
         }
 
         //Verify if the previous route is a company route
-        if(app('router')->getRoutes()->match(app('request')->create(URL::previous()))->getName() == 'company-settings.show'){
+        if(app('router')->getRoutes()->match(app('request')->create(url()->previous()))->getName() == 'company-settings.show'){
             return redirect()->to((CompanySettings::getUrl(compact('company'))), 303);
         }
 
