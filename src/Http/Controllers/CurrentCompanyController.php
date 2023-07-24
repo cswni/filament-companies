@@ -22,7 +22,11 @@ class CurrentCompanyController extends Controller
             abort(403);
         }
 
-        //return redirect()->to((CompanySettings::getUrl(compact('company'))), 303);
+        //Verify if the previous route is a company route
+        if(app('router')->getRoutes()->match(app('request')->create(URL::previous()))->getName() == 'company-settings.show'){
+            return redirect()->to((CompanySettings::getUrl(compact('company'))), 303);
+        }
+
         return redirect()->back();
     }
 }
