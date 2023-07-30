@@ -29,6 +29,6 @@ class CompanySettings extends Page
 
     public static function getSlug(): string
     {
-        return 'companies/{company}';
+        return 'companies/{company?}';
     }
 }
