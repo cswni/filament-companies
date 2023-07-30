@@ -29,6 +29,11 @@ class CompanySettings extends Page
 
     public static function getSlug(): string
     {
-        return 'companies/{company?}';
+        if(Auth()){
+            return 'companies/'.Auth::user()->currentCompany;;
+        }else{
+            return 'companies/1';
+         }
+
     }
 }
