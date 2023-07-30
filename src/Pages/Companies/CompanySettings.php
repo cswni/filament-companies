@@ -31,12 +31,13 @@ class CompanySettings extends Page
     {
         //Validate if running in console mode
         if (!app()->runningInConsole()) {
-        if(auth()->user()){
-            return 'companies/'.auth()->user()->current_company_id;
+            if(auth()->user()){
+                return 'companies/'.auth()->user()->current_company_id;
+            }else{
+                return 'companies/1';
+            }
         }else{
             return 'companies/1';
-         }
         }
-
     }
 }
