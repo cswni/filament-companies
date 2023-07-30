@@ -29,15 +29,6 @@ class CompanySettings extends Page
 
     public static function getSlug(): string
     {
-        //Validate if running in console mode
-        if (!app()->runningInConsole()) {
-            if(auth()->user()){
-                return 'companies/{company}';
-            }else{
-                return 'companies/1';
-            }
-        }else{
-            return 'companies/1';
-        }
+        return 'companies/{company}';
     }
 }
