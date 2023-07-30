@@ -29,11 +29,14 @@ class CompanySettings extends Page
 
     public static function getSlug(): string
     {
-        if(Auth()){
-            return 'companies/'.Auth::user()->currentCompany;;
+        //Validate if running in console mode
+        if (!app()->runningInConsole()) {
+        if(auth()->user()){
+            return 'companies/'.auth()->user()->current_company_id;
         }else{
             return 'companies/1';
          }
+        }
 
     }
 }
