@@ -172,14 +172,8 @@
                                         </x-filament::button>
                                     @endif
 
-                                    <!-- Leave Company -->
-                                    @if ($this->user->id === $user->id)
-                                        <x-filament::button size="sm" color="danger" wire:click="$toggle('confirmingLeavingCompany')">
-                                            {{ __('filament-companies::default.buttons.leave') }}
-                                        </x-filament::button>
-
-                                        <!-- Remove Company Employee -->
-                                    @elseif (Gate::check('removeCompanyEmployee', $company))
+                                    <!-- Remove Company Employee -->
+                                    @if (Gate::check('removeCompanyEmployee', $company))
                                         <x-filament::button size="sm" color="danger" wire:click="confirmCompanyEmployeeRemoval('{{ $user->id }}')">
                                             {{ __('filament-companies::default.buttons.remove') }}
                                         </x-filament::button>

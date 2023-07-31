@@ -25,6 +25,23 @@
                 <x-filament-companies::input id="name" type="text" maxlength="255" wire:model.defer="state.name" autofocus />
             </x-forms::field-wrapper>
 
+            <x-forms::field-wrapper id="name" statePath="name" required label="{{ __('filament-companies::default.labels.company_address') }}">
+
+                <x-filament-companies::input id="address" type="text" maxlength="255" wire:model.defer="state.address" />
+
+            </x-forms::field-wrapper>
+
+            <x-forms::field-wrapper id="name" statePath="name" required label="{{ __('filament-companies::default.labels.company_phone') }}">
+
+                <x-filament-companies::input id="phone" type="text" maxlength="255" wire:model.defer="state.phone" />
+
+            </x-forms::field-wrapper>
+
+            <x-forms::field-wrapper id="name" statePath="name" required label="{{ __('filament-companies::default.labels.company_owner') }}">
+
+                <x-filament-companies::input id="owner_name" type="text" maxlength="255" wire:model.defer="state.owner_name" />
+            </x-forms::field-wrapper>
+
             <x-slot name="footer">
                 <div class="text-left">
                     <x-filament::button type="submit">

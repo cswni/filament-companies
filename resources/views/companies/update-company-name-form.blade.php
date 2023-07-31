@@ -27,6 +27,20 @@
                 <x-filament-companies::input id="name" type="text" maxlength="255" wire:model.defer="state.name" :disabled="!Gate::check('update', $company)" />
             </x-forms::field-wrapper>
 
+            <x-forms::field-wrapper id="address" statePath="address" required label="{{ __('filament-companies::default.labels.company_address') }}">
+                <x-filament-companies::input id="address" type="text" maxlength="255" wire:model.defer="state.address" :disabled="!Gate::check('update', $company)" />
+
+            </x-forms::field-wrapper>
+
+            <x-forms::field-wrapper id="phone" statePath="phone" required label="{{ __('filament-companies::default.labels.company_phone') }}">
+                <x-filament-companies::input id="phone" type="text" maxlength="255" wire:model.defer="state.phone" :disabled="!Gate::check('update', $company)" />
+
+            </x-forms::field-wrapper>
+
+            <x-forms::field-wrapper id="owner_name" statePath="owner_name" required label="{{ __('filament-companies::default.labels.company_owner') }}">
+                <x-filament-companies::input id="owner_name" type="text" maxlength="255" wire:model.defer="state.owner_name" :disabled="!Gate::check('update', $company)" />
+            </x-forms::field-wrapper>
+
             @if (Gate::check('update', $company))
                 <x-slot name="footer">
                     <div class="text-left">
